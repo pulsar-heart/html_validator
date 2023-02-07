@@ -68,5 +68,3 @@ def _extract_tags(html):
                 tags.append(this_tag)
                 this_tag = ''
     return tags
-test = validate_html('')
-print (test)
