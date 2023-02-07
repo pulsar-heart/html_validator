@@ -20,8 +20,10 @@ def validate_html(html):
     index = 0
     tags = _extract_tags(html)
     s = []
-    if len(tags) == 0:
-        bool1 = '<' or '>' in html or len(html) == 0
+    if len(html) == 0:
+        return True
+    elif len(tags) == 0:
+        bool1 = '<' or '>' in html
         return not bool1
     while index < len(tags) and balanced:
         tag = tags[index]
@@ -66,3 +68,5 @@ def _extract_tags(html):
                 tags.append(this_tag)
                 this_tag = ''
     return tags
+test = validate_html('')
+print (test)
