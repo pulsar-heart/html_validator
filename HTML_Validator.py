@@ -22,12 +22,12 @@ def validate_html(html):
     s = []
     while index < len(tags) and balanced:
         tag = tags[index]
-        if not '</' in tag:
+        if '</' not in tag:
             s.append(tag)
         else:
             if len(s) == 0:
                 balanced = False
-            else: 
+            else:
                 top = s.pop()
                 top_word = top[1:-1]
                 this_word = tag[2:-1]
